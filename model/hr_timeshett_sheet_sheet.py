@@ -16,7 +16,7 @@ class hr_timesheet_reminder(models.Model):
             for employee in employee_obj.browse(cr, uid, employee_ids):
                 first_day_last_month_string= (datetime.now()-relativedelta(months=1)).strftime('%Y-%m-01 00:00:00')
                 last_day_last_month_string = (datetime.strptime((datetime.now().strftime('%Y-%m-01 23:59:59')),'%Y-%m-%d %H:%M:%S')-timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
-                timesheet_ids = timesheet_obj.search(cr, uid, [('date_from','>=',first_day_last_month_string),('date_to','<=',last_day_last_month_string),('state','in',['confirm','done'])])
+                timesheet_ids = timesheet_obj.search(cr, uid, [('date_from','>=',first_day_last_month_string),('date_to','<=',last_day_last_month_string),('state','in',['confirm','done']), ('employee_id', '=', employee.id)])
                 if not timesheet_ids or (timesheet_ids and len(timesheet_ids)==0):
                     template_ids = email_template_obj.search(cr, uid, [('name', '=','HR Timesheet Reminder')]) 
                     if template_ids:
