@@ -6,7 +6,7 @@ class hr_timesheet_reminder(models.Model):
     _inherit = ['hr_timesheet_sheet.sheet']
     
     def _cron_timesheet_reminder(self, cr, uid, ids=None, context=None):
-        email_template_obj = self.pool.get('email.template')
+        email_template_obj = self.pool.get('mail.template')
         mail_mail_obj = self.pool.get('mail.mail')
         timesheet_obj = self.pool.get('hr_timesheet_sheet.sheet')
         employee_obj = self.pool.get('hr.employee')
