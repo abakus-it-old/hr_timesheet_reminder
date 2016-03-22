@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" ?>
 <openerp>
     <data>
-        <record id="email_template_timesheet_reminder" model="email.template">
+        <record id="email_template_timesheet_reminder" model="mail.template">
             <field name="name">HR Timesheet Reminder</field>
             <field name="email_from">noreply@abakusitsolutions.eu</field>
             <field name="subject">Odoo: Please complete or submit your timesheet of last month</field>
