@@ -1,6 +1,6 @@
 ﻿{
     'name': "Timesheet Reminder",
-    'version': '1.0',
+    'version': '9.0.1.0',
     'depends': ['hr_timesheet_sheet',],
     'author': "Bernard DELHEZ, AbAKUS it-solutions SARL",
     'website': "http://www.abakusitsolutions.eu",
